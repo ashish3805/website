@@ -1,0 +1,110 @@
+%body
+  %nav#mainNav.navbar.navbar-default.navbar-fixed-top.navbar-custom
+    .container
+      / Brand and toggle get grouped for better mobile display
+      .navbar-header.page-scroll
+        %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          Menu
+          %i.fa.fa-bars
+        %a.navbar-brand{:href => "#page-top"} Nebulis
+      / Collect the nav links, forms, and other content for toggling
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+          %li.hidden
+            %a{:href => "#page-top"}
+          %li.page-scroll
+            %a{:href => "#register"} Register
+          %li.page-scroll
+            %a{:href => "https://community.nebulis.io/"} Community
+          %li.page-scroll
+            %a{:href => "#"} Team
+      / /.navbar-collapse
+    / /.container-fluid
+  / Header
+  %header
+    .container
+      .row
+        .col-lg-12
+          .intro-text
+            %span.name Nebulis
+            %hr.star-light/
+            %span.skills At its core, Nebulis is a federated system of smart contracts.
+            %form.subscribe.form-inline{ action: s_url, method: "POST" }
+              = hidden_field_tag :authenticity_token, form_authenticity_token
+              -if flash[:subscription_notice]
+                .alert.alert-success= flash[:subscription_notice]
+              Subscribe to our mailing list!
+              %input.form-control{ placeholder: "Your e-mail", type: "email", name: "email" }
+              %input.form-control{ type: "submit", value: "Subscribe" }
+  %section{:id => "register"}
+    .container
+      .row
+        .col-lg-12.text-center
+          %h2 Register your domain.
+          %p
+            =form_for(@preregistration, :url => { :action => "create" , anchor: "register", controller: "preregistrations" }) do |f|
+              - if notice
+                .alert.alert-success= notice
+              - if @preregistration.errors.any?        
+                %ul.alert.alert-danger
+                  - @preregistration.errors.full_messages.each do |message|
+                    %li= message
+              .form-group{:class => ("has-danger" if @preregistration.errors.messages.has_key?(:name))}
+                = f.label :name
+                = f.text_field :name, class: "form-control", placeholder: "Your name"
+              .form-group{:class => ("has-danger" if @preregistration.errors.messages.has_key?(:email))}
+                = f.label :email
+                = f.text_field :email, class: "form-control"
+                %small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
+              .form-group
+                = f.label :cluster
+                = f.select(:cluster, options_for_select(Preregistration.get_clusters), {}, { class: "form-control" })
+              .form-group{:class => ("has-danger" if @preregistration.errors.messages.has_key?(:domain))}
+                = f.label :domain
+                = f.text_field :domain, class: "form-control"
+              .form-group{:class => ("has-danger" if @preregistration.errors.messages.has_key?(:subscription))}
+                = f.label :subscription, "", class: "form-check-label" do
+                  = f.check_box :subscription, class: "form-check-input"
+                  Subscribe to mailing list
+              .actions
+                = f.submit "Pre-register", class: "btn btn-primary float-md-right"
+          %hr.star-primary/
+  / Footer
+  %footer.text-center
+    .footer-above
+      .container
+        .row
+          .footer-col.col-md-4
+            %h3 Location
+            %p Everywhere
+          .footer-col.col-md-4
+            %h3 Around the Web
+            %ul.list-inline
+              %li
+                %a.btn-social.btn-outline{:href => "#"}
+                  %i.fa.fa-fw.fa-facebook
+              %li
+                %a.btn-social.btn-outline{:href => "#"}
+                  %i.fa.fa-fw.fa-google-plus
+              %li
+                %a.btn-social.btn-outline{:href => "#"}
+                  %i.fa.fa-fw.fa-twitter
+              %li
+                %a.btn-social.btn-outline{:href => "#"}
+                  %i.fa.fa-fw.fa-linkedin
+              %li
+                %a.btn-social.btn-outline{:href => "#"}
+                  %i.fa.fa-fw.fa-dribbble
+          .footer-col.col-md-4
+            %h3 About Nebulis
+            %p At its core, Nebulis is a federated system of smart contracts.
+    .footer-below
+      .container
+        .row
+          .col-lg-12
+            Copyright © Nebulis 2016
+  / Scroll to Top Button (Only visible on small and extra-small screen sizes)
+  .scroll-top.page-scroll.hidden-sm.hidden-xs.hidden-lg.hidden-md
+    %a.btn.btn-primary{:href => "#page-top"}
+      %i.fa.fa-chevron-up

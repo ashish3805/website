@@ -1,0 +1,25 @@
+.l-center-out
+  .l-center-in    
+    =form_for @preregistration do |f|
+      - if notice
+        .alert.alert-success= notice
+      - if @preregistration.errors.any?        
+        %ul.alert.alert-danger
+          - @preregistration.errors.full_messages.each do |message|
+            %li= message
+      .form-group{:class => ("has-danger" if @preregistration.errors.messages.has_key?(:name))}
+        = f.label :name
+        = f.text_field :name, class: "form-control"
+      .form-group{:class => ("has-danger" if @preregistration.errors.messages.has_key?(:email))}
+        = f.label :email
+        = f.text_field :email, class: "form-control"
+        %small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
+      .form-group{:class => ("has-danger" if @preregistration.errors.messages.has_key?(:domain))}
+        = f.label :domain
+        = f.text_field :domain, class: "form-control"
+      .form-group{:class => ("has-danger" if @preregistration.errors.messages.has_key?(:subscription))}
+        = f.label :subscription, "", class: "form-check-label" do
+          = f.check_box :subscription, class: "form-check-input"
+          Subscribe to mailing list
+      .actions
+        = f.submit "Pre-register", class: "btn btn-primary float-md-right"  

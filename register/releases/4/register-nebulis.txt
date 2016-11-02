@@ -1,0 +1,50 @@
+
+
+RESERVE YOUR DOMAIN is a call to action on the front page of nebulis.io which then leads to register.nebulis.io.
+
+*******************************************************************
+*								  *
+*								  *
+*								  *
+*								  *
+*								  *
+*			   NEBULIS				  *
+*								  *
+*		XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX		  	  *
+*		XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX			  *
+*								  *
+*		   **********************	  		  *
+* 		   *RESERVE YOUR DOMAIN *			  *
+*		   **********************	  		  *
+*				_________________		  *	
+*		FOLLOW NEBULIS: |_____[email _____|		  *
+*******************************************************************
+
+
+FIELDS:
+
+1. Name
+2. Email [checks if not already on database from the "follow Nebulis" field]
+3. Rule: only 1 reservation per email address.
+4. A "check availability" field with two halves. The first is a drop-down
+with the following options for the cluster:
+
+/home
+/wallet
+/users
+/music
+/watch
+/learn
+/shop
+/public
+
+The second box is the domain. Build a database with seperate fields for
+each cluster, then feed back "red" (already taken) or green (available) depending
+on whether the string input already exists.
+
+RULES
+
+
+
+
+

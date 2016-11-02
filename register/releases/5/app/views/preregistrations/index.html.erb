@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Preregistrations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Domain</th>
+      <th>Subscription</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @preregistrations.each do |preregistration| %>
+      <tr>
+        <td><%= preregistration.name %></td>
+        <td><%= preregistration.email %></td>
+        <td><%= preregistration.domain %></td>
+        <td><%= preregistration.subscription %></td>
+        <td><%= link_to 'Show', preregistration %></td>
+        <td><%= link_to 'Edit', edit_preregistration_path(preregistration) %></td>
+        <td><%= link_to 'Destroy', preregistration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Preregistration', new_preregistration_path %>

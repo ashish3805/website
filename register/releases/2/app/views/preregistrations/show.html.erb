@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @preregistration.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @preregistration.email %>
+</p>
+
+<p>
+  <strong>Domain:</strong>
+  <%= @preregistration.domain %>
+</p>
+
+<p>
+  <strong>Subscription:</strong>
+  <%= @preregistration.subscription %>
+</p>
+
+<%= link_to 'Edit', edit_preregistration_path(@preregistration) %> |
+<%= link_to 'Back', preregistrations_path %>
