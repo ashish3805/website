@@ -7,13 +7,13 @@ class Preregistration < ApplicationRecord
   validates :domain, length: { maximum: 16 }
   validates :domain, uniqueness: { scope: :cluster }
   validates :email, uniqueness: true 
-
-  def self.get_clusters    
+#maybe this will work to remove /
+  def self.get_clusters
     self.clusters.map do |k,v|
       if k == "pblic" then
-        { "/public" => k }
+        { "public" => k }
       else
-        { "/#{k.to_s}" => k }
+        { "#{k.to_s}" => k }
       end
     end.reduce(:merge)
   end
