@@ -10,3 +10,6 @@ npm-debug.log
 
 # envs
 .env
+
+# nodemon
+nodemon.json
