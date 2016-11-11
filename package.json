@@ -4,6 +4,8 @@
   "description": "Website for Nebulis",
   "main": "index.js",
   "scripts": {
+    "setup": "npm install && gulp setup",
+    "dev": "gulp",
     "test": "standard"
   },
   "repository": {
@@ -28,6 +30,7 @@
     "inert": "^4.0.2",
     "joi": "^9.2.0",
     "mongoose": "^4.6.7",
+    "standard": "^8.5.0",
     "vision": "^4.1.0",
     "yar": "^8.1.0"
   },
