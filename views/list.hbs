@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>List of reserved addresses - Nebulis</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body class="list-page">
+    {{> navbar }}
+    <div class="container">
+      <div class="page-header">
+        <h1>Total reserved domains: {{ addresses.length }}</h1>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <td>ID</td>
+              <td>Name</td>
+              <td>Email</td>
+              <td>Cluster</td>
+              <td>Domain</td>
+              <td>FQDN</td>
+              <td>Address</td>
+            </tr>
+          </thead>
+          <tbody>
+            {{# each addresses }}
+              <tr>
+                <td>{{ id }} </td>
+                <td>{{ name }} </td>
+                <td>{{ email }} </td>
+                <td>{{ cluster }} </td>
+                <td>{{ domain }} </td>
+                <td>{{ fqdn }} </td>
+                <td><a href="{{ interplanetary_address }}" target="_blank">{{ interplanetary_address }}</a></td>
+              </tr>
+            {{/ each }}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {{> footer }}
+    <script src="/js/vendor.js"></script>
+  </body>
+</html>

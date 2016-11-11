@@ -1,0 +1,18 @@
+{
+  "less": {
+    "source": "less/style.less",
+    "watch": [ "less/**/*.less" ],
+    "destination": "public/css",
+    "name": "style.css"
+  },
+  "vendor": {
+    "js": {
+      "sources": [
+        "./bower_components/jquery/dist/jquery.min.js",
+        "./bower_components/bootstrap/dist/js/bootstrap.min.js"
+      ],
+      "destination": "public/js",
+      "name": "vendor.js"
+    }
+  }
+}

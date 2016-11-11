@@ -1,8 +1,0 @@
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: domains_prereg
-  host: localhost
-  pool: 5
-  username: <%= ENV['APP_DATABASE_USERNAME'] %>
-  password: <%= ENV['APP_DATABASE_PASSWORD'] %>

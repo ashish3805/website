@@ -1,0 +1,43 @@
+{
+  "name": "nebulis-website",
+  "private": true,
+  "description": "Website for Nebulis",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nebulis-io/website.git"
+  },
+  "keywords": [
+    "nebulis"
+  ],
+  "author": "Harsh Vakharia <harshjv@gmail.com> (https://harshjv.github.io)",
+  "license": "MIT",
+  "engines": {
+    "node": "~6.9.0"
+  },
+  "bugs": {
+    "url": "https://github.com/nebulis-io/website/issues"
+  },
+  "homepage": "https://github.com/nebulis-io/website#readme",
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "hapi": "^15.2.0",
+    "inert": "^4.0.2",
+    "joi": "^9.2.0",
+    "mongoose": "^4.6.7",
+    "vision": "^4.1.0",
+    "yar": "^8.1.0"
+  },
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-less": "^3.2.0",
+    "gulp-rename": "^1.2.2",
+    "nodemon": "^1.11.0"
+  }
+}

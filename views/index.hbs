@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nebulis - A federated system of smart contracts</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    {{> navbar }}
+    {{# if reserve }}
+      {{# if reserve.success }}
+        <div class="alert alert-success" role="alert">
+          <strong>Done!</strong> Your interplanetary address is successfully reserved!
+        </div>
+      {{ else }}
+        <div class="alert alert-danger" role="alert">
+          <strong>Oh snap!</strong> Something went wrong with your address reservation. Check your details and try again.
+        </div>
+      {{/ if }}
+    {{/ if }}
+    <div class="container">
+      {{> header }}
+      {{> features }}
+      {{> team }}
+      {{> reserve }}
+    </div>
+    {{> footer }}
+    <script src="/js/vendor.js"></script>
+    <script>
+      $('#reservation_form').submit(function () {
+        var cluster = $(this).find('select[name="cluster"]').val()
+        var domain = $(this).find('input[name="domain"]').val()
+
+        return window.confirm('Do you want to pre-register ' + cluster + '.' + domain + '?')
+      })
+    </script>
+  </body>
+</html>

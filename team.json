@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Philip Saunders",
+    "position": "Founder, CEO",
+    "bio": "Founder of Nebulis. Former Fellow for Ethereum at Exosphere. Born and raised in Ireland, Philip is a web developer and studied English, Italian and Applied Mathematics at University College Cork.",
+    "photo": "philip_saunders.jpeg",
+    "social": {
+      "linkedin": "",
+      "twitter": "",
+      "facebook": ""
+    }
+  },
+  {
+    "name": "Jérôme de Tychey",
+    "position": "Advisor",
+    "bio": "French-Luxembourger economist and miner, now focused on promoting ethereum for empowerment and businesses.",
+    "photo": "jerome_de_tychey.jpeg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/jerome-de-tychey",
+      "twitter": "https://twitter.com/jdetychey",
+      "facebook": "https://www.facebook.com/jerome.detychey"
+    }
+  },
+  {
+    "name": "Scott McKibbin",
+    "position": "Lead Middleware Engineer",
+    "bio": "TODO",
+    "photo": "scott_mckibbin.jpeg",
+    "social": {
+      "linkedin": "",
+      "twitter": "",
+      "facebook": ""
+    }
+  },
+  {
+    "name": "Harsh Vakharia",
+    "position": "Middleware Engineer",
+    "bio": "Engineer by passion. Creator by heart. Admirer of simplicity. Harsh has completed Bachelor's degree in Computer Engineering and is a Software Engineer.",
+    "photo": "harsh_vakharia.jpeg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/harshjv",
+      "twitter": "https://twitter.com/harshjv",
+      "facebook": "https://www.facebook.com/profile.php?id=1684195558"
+    }
+  }
+]

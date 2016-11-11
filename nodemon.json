@@ -1,0 +1,25 @@
+{
+  "script": "index.js",
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules",
+    "bower_components",
+    "public"
+  ],
+  "verbose": false,
+  "execMap": {
+    "js": "node"
+  },
+  "watch": [
+    "index.js",
+    "team.json",
+    "views/**/*.*",
+    "server/**/*.*"
+  ],
+  "env": {
+    "NODE_ENV": "development",
+    "PORT": 8000
+  },
+  "ext": "js, hbs"
+}

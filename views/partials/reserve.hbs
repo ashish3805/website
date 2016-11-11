@@ -1,0 +1,39 @@
+<div id="reserve" class="section">
+  <h1 class="text-center">Pre-register Your Interplanetary Address!</h1>
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <form method="post" action="/reserve" id="reservation_form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
+          <p class="help-block">We'll never share your email with anyone else.</p>
+        </div>
+        <div class="form-group">
+          <label for="cluster">Cluster</label>
+          <select class="form-control" name="cluster" id="cluster" required>
+            <option value="home">home</option>
+            <option value="wallet">wallet</option>
+            <option value="users">users</option>
+            <option value="music">music</option>
+            <option value="watch">watch</option>
+            <option value="learn">learn</option>
+            <option value="show">show</option>
+            <option value="public">public</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="domain">Domain</label>
+          <input type="text" class="form-control" id="domain" placeholder="Domain" name="domain" required>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="subscribe"> Subscribe to mailing list</label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Reserve Now</button>
+      </form>
+    </div>
+  </div>
+</div>
