@@ -9,14 +9,14 @@ const validateAndSave = (schema, request, cb) => {
     if (!err) {
       const address = new schema.InterplanetaryAddress(value)
 
-      address.save((mongoose_err) => {
-        if (mongoose_err) {
-          console.log(mongoose_err)
+      address.save((mongooseErr) => {
+        if (mongooseErr) {
+          console.log(mongooseErr)
         } else {
           console.log('meow')
         }
 
-        cb(!mongoose_err)
+        cb(!mongooseErr)
       })
     } else {
       cb(false)
