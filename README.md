@@ -4,8 +4,8 @@
 
 > **GENERAL NOTE**
 >
-> * Production server is running Dokku for deployment,
-> * Keep `nodemon.example.json` in sync with `nodemon.json`,
+> * Production server is running Dokku for deployment
+> * Keep `nodemon.example.json` in sync with `nodemon.json`
 > * To add team member's information, just edit [team.json](./team.json) file
 > * Do run `npm test` before sending PR or merging your commits
 
