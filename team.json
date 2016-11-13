@@ -2,8 +2,19 @@
   {
     "name": "Philip Saunders",
     "position": "Founder, CEO",
-    "bio": "Founder of Nebulis. Former Fellow for Ethereum at Exosphere. Born and raised in Ireland, Philip is a web developer and studied English, Italian and Applied Mathematics at University College Cork.",
-    "photo": "philip_saunders.jpeg",
+    "bio": "Founder of Nebulis. Ethereum developer and former Exosphere Fellow. Born and raised in Ireland.",
+    "photo": "philip_saunders.jpg",
+    "social": {
+      "linkedin": "",
+      "twitter": "",
+      "facebook": ""
+    }
+  },
+  {
+    "name": "Mohamed Alborno",
+    "position": "COO",
+    "bio" : "Filmmaker and entrepreneur from Egypt, living in Canada. Founder of A New Country.",
+    "photo": "alborno.jpg",
     "social": {
       "linkedin": "",
       "twitter": "",
@@ -12,8 +23,8 @@
   },
   {
     "name": "Jérôme de Tychey",
-    "position": "Advisor",
-    "bio": "French-Luxembourger economist and miner, now focused on promoting ethereum for empowerment and businesses.",
+    "position": "Community Manager",
+    "bio": "French-Luxembourger economist and miner. Passionate about building teams.",
     "photo": "jerome_de_tychey.jpeg",
     "social": {
       "linkedin": "https://www.linkedin.com/in/jerome-de-tychey",
@@ -24,7 +35,7 @@
   {
     "name": "Scott McKibbin",
     "position": "Lead Middleware Engineer",
-    "bio": "",
+    "bio": "Graduate in Computer Science from the University of Pittsbugh with a speciality in information security.",
     "photo": "scott_mckibbin.jpeg",
     "social": {
       "linkedin": "",
@@ -41,6 +52,39 @@
       "linkedin": "https://www.linkedin.com/in/harshjv",
       "twitter": "https://twitter.com/harshjv",
       "facebook": "https://www.facebook.com/profile.php?id=1684195558"
+    }
+  },
+  {
+    "name": "Max Benson",
+    "position": "Middleware Engineer",
+    "bio": "Soon-to-be graduate of Computer Science, University of Pittsburgh. Intern at Human Computer Interaction Institute at CMU.",
+    "photo": "max.jpg",
+    "social": {
+      "linkedin": "",
+      "twitter": "",
+      "facebook": ""
+    }
+  },
+  {
+    "name": "Federico Calarco",
+    "position": "Front-End Developer",
+    "bio": "Professional Fullstack developer, competitive waterpolo player and part-time filmmaker.",
+    "photo": "federico.png",
+    "social": {
+      "linkedin": "",
+      "twitter": "",
+      "facebook": ""
+    }
+  },
+  {
+    "name": "Matt McKibbin",
+    "position": "Advisor",
+    "bio": "Technologically savvy, extroverted connector with a drive for decentralization. Founder at Ubitquity, d10e.",
+    "photo": "matt.jpg",
+    "social": {
+      "linkedin": "",
+      "twitter": "",
+      "facebook": ""
     }
   }
 ]
