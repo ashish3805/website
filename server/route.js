@@ -67,5 +67,12 @@ module.exports = (schema) => [
         path: 'public'
       }
     }
+  },
+  {
+    method: 'GET',
+    path: '/docs',
+    handler: (request, reply) => {
+          return reply.view('docs')
+    }
   }
 ]
