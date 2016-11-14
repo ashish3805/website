@@ -9,6 +9,10 @@
 > * Do run `npm test` before sending PR or merging your commits
 
 
+## Contributing
+
+Do not push directly to master. Instead fork the repo, commit any changes and send a pull request.
+
 ## Setup
 
     git pull git@github.com:nebulis-io/website.git
@@ -28,3 +32,15 @@ Edit `nodemon.json` file and add `MONGO_URL` and `YAR_PASSWORD`.
     npm run dev
 
 Visit http://localhost:8000
+
+## Deploying
+
+The Nebulis site uses Dokku for automatic deployment. If you have write access to nebulis-io/master, add the dokku deployer locally via:
+
+	git remote add dokku dokku@nebulis.io:nebulis-website
+
+Then push it with the following command:
+
+	git push dokku master
+
+This will automatically update the website on the server.
