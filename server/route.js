@@ -72,7 +72,7 @@ module.exports = (schema) => [
     method: 'GET',
     path: '/docs',
     handler: (request, reply) => {
-          return reply.view('docs')
+      return reply.view('docs')
     }
   }
 ]
