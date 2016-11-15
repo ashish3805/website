@@ -1,4 +1,7 @@
 const mongoose = require('mongoose')
+const bluebird = require('bluebird')
+
+mongoose.Promise = bluebird
 
 module.exports = (cb) => {
   const conn = mongoose.createConnection(process.env.MONGO_URL)
