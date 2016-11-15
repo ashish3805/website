@@ -4,10 +4,9 @@
   "description": "Website for Nebulis",
   "main": "index.js",
   "scripts": {
-    "setup": "npm install && bower install && gulp setup",
     "dev": "gulp",
     "test": "standard",
-    "postinstall": "gulp setup"
+    "postinstall": "bower install && gulp setup"
   },
   "repository": {
     "type": "git",
