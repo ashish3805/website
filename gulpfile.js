@@ -7,7 +7,6 @@ const rename = require('gulp-rename')
 const concat = require('gulp-concat')
 
 const paths = require('./paths.json')
-const nodemonConfig = require('./nodemon.json')
 
 gulp.task('dependencies:install', () => gulp.src(paths.vendor.js.sources)
                                             .pipe(concat(paths.vendor.js.name))
@@ -27,11 +26,13 @@ gulp.task('less:build', () => gulp.src(paths.less.source)
 gulp.task('less:watch', () => gulp.watch(paths.less.watch, ['less']))
 
 gulp.task('nodemon', () => {
-  const monitor = nodemon(nodemonConfig)
+  if (process.env.NODE_ENV !== 'production') {
+    const monitor = nodemon(require('./nodemon.json'))
 
-  monitor.on('log', (log) => console.log(log.message))
+    monitor.on('log', (log) => console.log(log.message))
 
-  process.once('SIGINT', () => monitor.once('exit', () => process.exit()))
+    process.once('SIGINT', () => monitor.once('exit', () => process.exit()))
+  }
 })
 
 gulp.task('setup', [ 'dependencies:install', 'build' ])
