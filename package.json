@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "gulp",
     "test": "standard",
-    "postinstall": "bower install && gulp setup"
+    "postinstall": "bower install && gulp setup && gulp build"
   },
   "repository": {
     "type": "git",
