@@ -36,9 +36,9 @@ module.exports = (schema) => [
     handler: (request, reply) => {
       const reserve = request.yar.get('reserve')
 
-      request.yar.clear('reserve')
+      if (reserve) request.yar.clear('reserve')
 
-      return reply.view('index', { team, reserve })
+      return reply.view('index', { reserve })
     }
   },
   {
@@ -76,8 +76,11 @@ module.exports = (schema) => [
   {
     method: 'GET',
     path: '/docs',
-    handler: (request, reply) => {
-      return reply.view('docs')
-    }
+    handler: (request, reply) => reply.view('docs')
+  },
+  {
+    method: 'GET',
+    path: '/team',
+    handler: (request, reply) => reply.view('team', { team })
   }
 ]
