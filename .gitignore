@@ -13,3 +13,7 @@ npm-debug.log
 
 # nodemon
 nodemon.json
+
+# generated assets
+/public/css
+/public/js
