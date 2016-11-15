@@ -17,7 +17,7 @@ Do not push directly to master. Instead fork the repo, commit any changes and se
 
     git pull git@github.com:nebulis-io/website.git
     cd website
-    npm run setup
+    npm install
 
 
 ## Configuration
