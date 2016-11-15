@@ -21,6 +21,8 @@
     "NODE_ENV": "development",
     "MONGO_URL": "mongodb://username:password@host:port/dbname",
     "YAR_PASSWORD": "some-random-string-min-length-32-char",
+    "MAILCHIMP_LIST_ID": "1111111111",
+    "MAILCHIMP_API_KEY": "mailchimp-api-key",
     "PORT": 8000
   },
   "ext": "js, hbs"

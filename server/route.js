@@ -1,6 +1,7 @@
 const Joi = require('joi')
 
 const addressSchema = require('./schema/address')
+const mailchimp = require('./mailchimp')
 
 const team = require('../team.json')
 
@@ -9,11 +10,17 @@ const validateAndSave = (schema, request, cb) => {
     if (!err) {
       const address = new schema.InterplanetaryAddress(value)
 
+      console.log(value)
+
       address.save((mongooseErr) => {
         if (mongooseErr) {
-          console.log(mongooseErr)
-        } else {
-          console.log('meow')
+          console.error(mongooseErr)
+        } else if (value.subscribe) {
+          mailchimp(value.email, (mailchimpError) => {
+            if (mailchimpError) {
+              console.error(mailchimpError)
+            }
+          })
         }
 
         cb(!mongooseErr)
