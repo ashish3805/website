@@ -5,6 +5,11 @@ const mailchimp = require('./mailchimp')
 
 const team = require('../team.json')
 
+const wrapMetadata = (request, data) => {
+  const url = `${request.connection.info.protocol}://${request.info.host}${request.url.pathname}`
+  return Object.assign({ url }, data)
+}
+
 const validateAndSave = (schema, request, cb) => {
   Joi.validate(request.payload, addressSchema, (err, value) => {
     if (!err) {
@@ -31,6 +36,12 @@ const validateAndSave = (schema, request, cb) => {
 
 module.exports = (schema) => [
   {
+    method: '*',
+    path: '/{params*}',
+    vhost: 'nebulis.io',
+    handler: (request, reply) => reply.redirect(`http://www.nebulis.io${request.url.path}`)
+  },
+  {
     method: 'GET',
     path: '/',
     handler: (request, reply) => {
@@ -38,7 +49,13 @@ module.exports = (schema) => [
 
       if (reserve) request.yar.clear('reserve')
 
-      return reply.view('index', { reserve })
+      const data = {
+        title: 'Home',
+        reserve: reserve,
+        description: 'Nebulis is a global distributed directory intended to upgrade and replace the existing Domain Name System using the Ethereum blockchain. A new phonebook for a new web. Nebulis is also compatible with a wide variety of content-addressed protocols like IPFS and MaidSafe.'
+      }
+
+      return reply.view('index', wrapMetadata(request, data))
     }
   },
   {
@@ -57,7 +74,13 @@ module.exports = (schema) => [
     handler: (request, reply) => {
       schema.InterplanetaryAddress.find({}, (err, addresses) => {
         if (!err) {
-          return reply.view('list', { addresses })
+          const data = {
+            title: 'Reserved addresses',
+            description: 'List of reserved addresses',
+            addresses
+          }
+
+          return reply.view('list', wrapMetadata(request, data))
         } else {
           throw err
         }
@@ -76,11 +99,26 @@ module.exports = (schema) => [
   {
     method: 'GET',
     path: '/docs',
-    handler: (request, reply) => reply.view('docs')
+    handler: (request, reply) => {
+      const data = {
+        title: 'Documentation',
+        description: 'Documentation for Nebulis'
+      }
+
+      return reply.view('docs', wrapMetadata(request, data))
+    }
   },
   {
     method: 'GET',
     path: '/team',
-    handler: (request, reply) => reply.view('team', { team })
+    handler: (request, reply) => {
+      const data = {
+        title: 'Team',
+        description: 'Nebulis Team',
+        team
+      }
+
+      return reply.view('team', wrapMetadata(request, data))
+    }
   }
 ]

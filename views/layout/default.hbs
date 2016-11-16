@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }} | Nebulis</title>
+    {{> meta }}
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/style.css">
+    {{{ block 'css' }}}
+  </head>
+  <body>
+    {{> navbar }}
+    {{{ block 'pre-content' }}}
+    <div class="container">
+      {{{ content }}}
+    </div>
+    {{{ block 'post-content' }}}
+    {{> footer }}
+    <script src="/js/vendor.js"></script>
+    {{{ block 'js' }}}
+  </body>
+</html>

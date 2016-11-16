@@ -27,6 +27,7 @@
   "dependencies": {
     "bluebird": "^3.4.6",
     "handlebars": "^4.0.5",
+    "handlebars-extend-block": "^1.0.0",
     "hapi": "^15.2.0",
     "inert": "^4.0.2",
     "joi": "^9.2.0",

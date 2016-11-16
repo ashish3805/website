@@ -1,6 +1,7 @@
 const assert = require('assert')
 const Hapi = require('hapi')
 const handlebars = require('handlebars')
+const extendBlock = require('handlebars-extend-block')
 
 const route = require('./route')
 const dbSchema = require('./schema/db')
@@ -29,11 +30,13 @@ module.exports = (connection) => {
     server.views({
       engines: {
         hbs: {
-          module: handlebars
+          module: extendBlock(handlebars)
         }
       },
       path: 'views',
-      partialsPath: 'views/partials'
+      partialsPath: 'views/partials',
+      layoutPath: 'views/layout',
+      layout: 'default'
     })
 
     server.route(route(schema))
