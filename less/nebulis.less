@@ -1,5 +1,6 @@
 @section-padding: @navbar-height * 2;
 @border-bottom-width: 3px;
+@footer-text-color: lighten(#99979c, 5%);
 
 a {
 	border-bottom: @border-bottom-width solid;
@@ -42,12 +43,23 @@ body {
 	padding-top: 50px;
   padding-bottom: 50px;
   margin-top: 100px;
-  color: #99979c;
+  color: @footer-text-color;
   text-align: center;
   background-color: #2a2730;
 
+	h1 {
+		&:not(:first-child) {
+			margin-top: 40px;
+		}
+
+		color: lighten(@footer-text-color, 15%);
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+
 	p {
-		margin: 0;
+		margin-top: 40px;
+		margin-bottom: 0;
 	}
 }
 
@@ -85,7 +97,7 @@ body {
 	}
 }
 
-#team, #social {
+#team, #community {
 	ul {
 		margin-bottom: 0;
 	}
