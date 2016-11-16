@@ -10,7 +10,7 @@ const InterplanetaryAddress = Schema({
   },
   cluster: {
     type: String,
-    enum: [ 'home', 'wallet', 'users', 'music', 'watch', 'learn', 'show', 'public' ]
+    enum: [ 'home', 'wallet', 'users', 'music', 'watch', 'learn', 'shop', 'public' ]
   },
   domain: {
     type: String,
