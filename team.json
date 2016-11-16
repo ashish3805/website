@@ -22,6 +22,17 @@
     }
   },
   {
+    "name": "Harsh Vakharia",
+    "position": "CTO",
+    "bio": "Engineer by passion. Creator by heart. Admires simplicity.",
+    "photo": "harsh_vakharia.jpeg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/harshjv",
+      "twitter": "https://twitter.com/harshjv",
+      "facebook": "https://www.facebook.com/profile.php?id=1684195558"
+    }
+  },
+  {
     "name": "Jérôme de Tychey",
     "position": "Community Manager",
     "bio": "French-Luxembourger economist and miner. Passionate about building teams.",
@@ -41,17 +52,6 @@
       "linkedin": "",
       "twitter": "",
       "facebook": ""
-    }
-  },
-  {
-    "name": "Harsh Vakharia",
-    "position": "Middleware Engineer",
-    "bio": "Engineer by passion. Creator by heart. Admirer of simplicity. Harsh has completed Bachelor's degree in Computer Engineering and is a Software Engineer.",
-    "photo": "harsh_vakharia.jpeg",
-    "social": {
-      "linkedin": "https://www.linkedin.com/in/harshjv",
-      "twitter": "https://twitter.com/harshjv",
-      "facebook": "https://www.facebook.com/profile.php?id=1684195558"
     }
   },
   {

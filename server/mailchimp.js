@@ -9,16 +9,14 @@ const options = {
     user: 'nebulis-nodejs',
     pass: MAILCHIMP_API_KEY
   },
-  json: true,
-  body: {
-    status: 'pending'
-  }
+  json: true
 }
 
 module.exports = (email, cb) => {
   request(Object.assign(options, {
     body: {
-      email_address: email
+      email_address: email,
+      status: 'pending'
     }
   }), function (error, response, body) {
     if (error) {
