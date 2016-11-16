@@ -36,12 +36,6 @@ const validateAndSave = (schema, request, cb) => {
 
 module.exports = (schema) => [
   {
-    method: '*',
-    path: '/{params*}',
-    vhost: 'nebulis.io',
-    handler: (request, reply) => reply.redirect(`http://www.nebulis.io${request.url.path}`).permanent(true)
-  },
-  {
     method: 'GET',
     path: '/',
     handler: (request, reply) => {
