@@ -39,13 +39,15 @@ module.exports = (connection) => {
       layout: 'default'
     })
 
-    server.ext('onRequest', (request, reply) => {
-      if (request.info.host === 'nebulis.io') {
-        return reply.redirect(`http://www.nebulis.io${request.url.path}`).permanent(true)
-      } else {
-        return reply.continue()
-      }
-    })
+    if (process.env.NODE_ENV === 'production') {
+      server.ext('onRequest', (request, reply) => {
+        if (request.info.host === 'nebulis.io') {
+          return reply.redirect(`http://www.nebulis.io${request.url.path}`).permanent(true)
+        } else {
+          return reply.continue()
+        }
+      })
+    }
 
     server.route(route(schema))
 

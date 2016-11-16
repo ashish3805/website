@@ -3,7 +3,7 @@
     "name": "Philip Saunders",
     "position": "Founder, CEO",
     "bio": "Founder of Nebulis. Ethereum developer and former Exosphere Fellow. Born and raised in Ireland.",
-    "photo": "philip_saunders.jpg",
+    "photo": "philip_saunders.png",
     "social": {
       "linkedin": "",
       "twitter": "",
@@ -14,7 +14,7 @@
     "name": "Mohamed Alborno",
     "position": "COO",
     "bio" : "Filmmaker and entrepreneur from Egypt, living in Canada. Founder of A New Country.",
-    "photo": "alborno.jpg",
+    "photo": "alborno.png",
     "social": {
       "linkedin": "",
       "twitter": "",
@@ -25,7 +25,7 @@
     "name": "Harsh Vakharia",
     "position": "CTO",
     "bio": "Engineer by passion. Creator by heart. Admires simplicity.",
-    "photo": "harsh_vakharia.jpeg",
+    "photo": "harsh_vakharia.png",
     "social": {
       "linkedin": "https://www.linkedin.com/in/harshjv",
       "twitter": "https://twitter.com/harshjv",
@@ -36,7 +36,7 @@
     "name": "Jérôme de Tychey",
     "position": "Community Manager",
     "bio": "French-Luxembourger economist and miner. Passionate about building teams.",
-    "photo": "jerome_de_tychey.jpeg",
+    "photo": "jerome_de_tychey.png",
     "social": {
       "linkedin": "https://www.linkedin.com/in/jerome-de-tychey",
       "twitter": "https://twitter.com/jdetychey",
@@ -47,7 +47,7 @@
     "name": "Scott McKibbin",
     "position": "Lead Middleware Engineer",
     "bio": "Graduate in Computer Science from the University of Pittsbugh with a speciality in information security.",
-    "photo": "scott_mckibbin.jpeg",
+    "photo": "scott_mckibbin.png",
     "social": {
       "linkedin": "",
       "twitter": "",
@@ -58,7 +58,7 @@
     "name": "Max Benson",
     "position": "Middleware Engineer",
     "bio": "Soon-to-be graduate of Computer Science, University of Pittsburgh. Intern at Human Computer Interaction Institute at CMU.",
-    "photo": "max.jpg",
+    "photo": "max.png",
     "social": {
       "linkedin": "",
       "twitter": "",
@@ -80,7 +80,7 @@
     "name": "Matt McKibbin",
     "position": "Advisor",
     "bio": "Technologically savvy, extroverted connector with a drive for decentralization. Founder at Ubitquity, d10e.",
-    "photo": "matt.jpg",
+    "photo": "matt.png",
     "social": {
       "linkedin": "",
       "twitter": "",

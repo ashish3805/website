@@ -44,7 +44,7 @@ module.exports = (schema) => [
       if (reserve) request.yar.clear('reserve')
 
       const data = {
-        title: 'Home',
+        title: 'Reserve Your Interplanetary Address',
         reserve: reserve,
         description: 'Nebulis is a global distributed directory intended to upgrade and replace the existing Domain Name System using the Ethereum blockchain. A new phonebook for a new web. Nebulis is also compatible with a wide variety of content-addressed protocols like IPFS and MaidSafe.'
       }
