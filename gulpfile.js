@@ -6,7 +6,7 @@ const cssnano = require('gulp-cssnano')
 const rename = require('gulp-rename')
 const concat = require('gulp-concat')
 
-const paths = require('./paths.json')
+const paths = require('./config/paths')
 
 gulp.task('dependencies:install', () => gulp.src(paths.vendor.js.sources)
                                             .pipe(concat(paths.vendor.js.name))

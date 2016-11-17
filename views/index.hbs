@@ -8,7 +8,13 @@
     </div>
   {{ else }}
     <div class="alert alert-danger" role="alert">
-      <strong>Oh snap!</strong> Something went wrong with your address reservation. Check your details and try again.
+      {{# if reserve.messages }}
+        {{# each reserve.messages }}
+          <p>{{ message }}.</p>
+        {{/each}}
+      {{ else }}
+        <strong>Oh snap!</strong> Something went wrong with your address reservation. Check your details and try again.
+      {{/ if }}
     </div>
   {{/ if }}
 {{/ if }}
@@ -23,8 +29,10 @@
   $('#reservation_form').submit(function () {
     var cluster = $(this).find('select[name="cluster"]').val()
     var domain = $(this).find('input[name="domain"]').val()
+    var fqdn = cluster + '.' + domain
+    var address = 'ipfs://' + fqdn
 
-    return window.confirm('Do you want to pre-register ' + cluster + '.' + domain + '?')
+    return window.confirm('Do you want to pre-register ' + fqdn + '?' + '\nYour Interplanatery Address will be "' + address + '"')
   })
 </script>
 {{/ extend }}

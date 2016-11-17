@@ -13,7 +13,7 @@
   },
   "watch": [
     "index.js",
-    "team.json",
+    "config/**/*.*",
     "views/**/*.*",
     "server/**/*.*"
   ],

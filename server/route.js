@@ -1,37 +1,10 @@
-const Joi = require('joi')
-
-const addressSchema = require('./schema/address')
-const mailchimp = require('./mailchimp')
-
-const team = require('../team.json')
+const validateAndSave = require('./util/validate_and_save')
+const team = require('../config/team.json')
+const clusters = require('../config/clusters.json')
 
 const wrapMetadata = (request, data) => {
   const url = `${request.connection.info.protocol}://${request.info.host}${request.url.pathname}`
   return Object.assign({ url }, data)
-}
-
-const validateAndSave = (schema, request, cb) => {
-  Joi.validate(request.payload, addressSchema, (err, value) => {
-    if (!err) {
-      const address = new schema.InterplanetaryAddress(value)
-
-      address.save((mongooseErr) => {
-        if (mongooseErr) {
-          console.error(mongooseErr)
-        } else if (value.subscribe) {
-          mailchimp(value.email, (mailchimpError) => {
-            if (mailchimpError) {
-              console.error(mailchimpError)
-            }
-          })
-        }
-
-        cb(!mongooseErr)
-      })
-    } else {
-      cb(false)
-    }
-  })
 }
 
 module.exports = (schema) => [
@@ -46,7 +19,8 @@ module.exports = (schema) => [
       const data = {
         title: 'Reserve Your Interplanetary Address',
         reserve: reserve,
-        description: 'Nebulis is a global distributed directory intended to upgrade and replace the existing Domain Name System using the Ethereum blockchain. A new phonebook for a new web. Nebulis is also compatible with a wide variety of content-addressed protocols like IPFS and MaidSafe.'
+        description: 'Nebulis is a global distributed directory intended to upgrade and replace the existing Domain Name System using the Ethereum blockchain. A new phonebook for a new web. Nebulis is also compatible with a wide variety of content-addressed protocols like IPFS and MaidSafe.',
+        clusters
       }
 
       return reply.view('index', wrapMetadata(request, data))
@@ -56,8 +30,19 @@ module.exports = (schema) => [
     method: 'POST',
     path: '/reserve',
     handler: (request, reply) => {
-      validateAndSave(schema, request, (status) => {
-        request.yar.set('reserve', { success: status })
+      validateAndSave(schema, request, (error) => {
+        if (error) {
+          if (error.isJoi) {
+            request.yar.set('reserve', { success: false, messages: error.details })
+          } else if (error.code === 11000) {
+            request.yar.set('reserve', { success: false, messages: [ { message: 'Email and/or Interplanetary Address is already registered' } ] })
+          } else {
+            request.yar.set('reserve', { success: false })
+          }
+        } else {
+          request.yar.set('reserve', { success: true })
+        }
+
         return reply.redirect('/')
       })
     }

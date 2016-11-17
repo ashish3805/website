@@ -1,5 +1,7 @@
 const Schema = require('mongoose').Schema
 
+const clusters = require('../../config/clusters.json')
+
 const InterplanetaryAddress = Schema({
   name: String,
   email: {
@@ -10,7 +12,7 @@ const InterplanetaryAddress = Schema({
   },
   cluster: {
     type: String,
-    enum: [ 'home', 'wallet', 'users', 'music', 'watch', 'learn', 'shop', 'public' ]
+    enum: clusters
   },
   domain: {
     type: String,

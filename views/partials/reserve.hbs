@@ -15,14 +15,9 @@
         <div class="form-group">
           <label for="cluster">Cluster</label>
           <select class="form-control" name="cluster" id="cluster" required>
-            <option value="home">home</option>
-            <option value="wallet">wallet</option>
-            <option value="users">users</option>
-            <option value="music">music</option>
-            <option value="watch">watch</option>
-            <option value="learn">learn</option>
-            <option value="shop">shop</option>
-            <option value="public">public</option>
+            {{# each clusters }}
+              <option value="{{ this }}">{{ this }}</option>
+            {{/ each }}
           </select>
         </div>
         <div class="form-group">
