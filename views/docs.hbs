@@ -6,6 +6,12 @@
 
 <div id="community">
   <ul>
-    <li><a href="https://ipfs.io/ipfs/QmYzKSpsYVvxJZU7qaR6EVEpoGgGpDRNmC2mwryF3wbd7S/Nebulis.pdf" target="_blank">First Memorandum</a></li>
+    <li><a id="first_memorandum" href="https://ipfs.io/ipfs/QmYzKSpsYVvxJZU7qaR6EVEpoGgGpDRNmC2mwryF3wbd7S/Nebulis.pdf" target="_blank">First Memorandum</a></li>
   </ul>
 </div>
+
+{{# extend 'js' }}
+<script>
+  mixpanel.track_links('#first_memorandum', 'Click on First Memorandum')
+</script>
+{{/ extend }}

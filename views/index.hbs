@@ -32,7 +32,12 @@
     var fqdn = cluster + '.' + domain
     var address = 'ipfs://' + fqdn
 
-    return window.confirm('Do you want to pre-register ' + fqdn + '?' + '\nYour Interplanatery Address will be "' + address + '"')
+    var confirmation = window.confirm('Do you want to pre-register ' + fqdn + '?' + '\nYour Interplanatery Address will be "' + address + '"')
+
+    if (confirmation) mixpanel.track('Pre-register address')
+    else mixpanel.track('Abort pre-registering address')
+
+    return confirmation
   })
 </script>
 {{/ extend }}
