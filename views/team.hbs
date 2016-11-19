@@ -15,9 +15,12 @@
           <p>{{ position }}</p>
           <p>{{ bio }}</p>
           <ul class="list-inline list-unstyled social-links">
-            <li><a href="{{ social.linkedin }}" target="_blank"><img src="/img/linkedin.png" /></a></li>
-            <li><a href="{{ social.twitter }}" target="_blank"><img src="/img/twitter.png" /></a></li>
-            <li><a href="{{ social.facebook }}" target="_blank"><img src="/img/facebook.png" /></a></li>
+            {{# if social.linkedin }}
+              <li><a href="{{ social.linkedin }}" target="_blank"><img src="/img/linkedin.png" /></a></li>
+            {{/ if }}
+            {{# if social.email }}
+              <li><a href="mailto:{{ social.email }}"><img src="/img/email.png" /></a></li>
+            {{/ if }}
           </ul>
         </div>
       </div>

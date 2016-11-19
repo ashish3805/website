@@ -5,9 +5,8 @@
     "bio": "Founder of Nebulis. Ethereum developer and former Exosphere Fellow. Born and raised in Ireland.",
     "photo": "philip_saunders.png",
     "social": {
-      "linkedin": "",
-      "twitter": "",
-      "facebook": ""
+      "linkedin": "https://www.linkedin.com/in/philip-saunders-00323511a",
+      "email": "philip@nebulis.io"
     }
   },
   {
@@ -16,9 +15,8 @@
     "bio" : "Filmmaker and entrepreneur from Egypt, living in Canada. Founder of A New Country.",
     "photo": "alborno.png",
     "social": {
-      "linkedin": "",
-      "twitter": "",
-      "facebook": ""
+      "linkedin": "https://www.linkedin.com/in/alborno",
+      "email": "mohamed@nebulis.io"
     }
   },
   {
@@ -28,8 +26,7 @@
     "photo": "harsh_vakharia.png",
     "social": {
       "linkedin": "https://www.linkedin.com/in/harshjv",
-      "twitter": "https://twitter.com/harshjv",
-      "facebook": "https://www.facebook.com/profile.php?id=1684195558"
+      "email": "harsh@nebulis.io"
     }
   },
   {
@@ -39,8 +36,7 @@
     "photo": "jerome_de_tychey.png",
     "social": {
       "linkedin": "https://www.linkedin.com/in/jerome-de-tychey",
-      "twitter": "https://twitter.com/jdetychey",
-      "facebook": "https://www.facebook.com/jerome.detychey"
+      "email": "jerome@nebulis.io"
     }
   },
   {
@@ -50,8 +46,7 @@
     "photo": "scott_mckibbin.png",
     "social": {
       "linkedin": "",
-      "twitter": "",
-      "facebook": ""
+      "email": "scott@nebulis.io"
     }
   },
   {
@@ -61,8 +56,7 @@
     "photo": "max.png",
     "social": {
       "linkedin": "",
-      "twitter": "",
-      "facebook": ""
+      "email": "max@nebulis.io"
     }
   },
   {
@@ -71,9 +65,8 @@
     "bio": "Technologically savvy, extroverted connector with a drive for decentralization. Founder at Ubitquity, d10e.",
     "photo": "matt.png",
     "social": {
-      "linkedin": "",
-      "twitter": "",
-      "facebook": ""
+      "linkedin": "https://www.linkedin.com/in/mattmckibbin",
+      "email": "matt@nebulis.io"
     }
   }
 ]
