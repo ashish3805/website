@@ -1,8 +1,10 @@
 const Schema = require('mongoose').Schema
+const passportLocalMongoose = require('passport-local-mongoose')
 
 const clusters = require('../../config/clusters.json')
 
-const InterplanetaryAddress = Schema({
+const User = Schema({
+  isAdmin: Boolean,
   name: String,
   email: {
     type: String,
@@ -10,6 +12,20 @@ const InterplanetaryAddress = Schema({
     lowercase: true,
     unique: true
   },
+  interplanetaryAddress: { type: Schema.Types.ObjectId, ref: 'InterplanetaryAddress' }
+}, {
+  timestamps: true,
+  toJSON: { virtuals: true }
+})
+
+User.plugin(passportLocalMongoose, {
+  usernameField: 'email',
+  passwordField: 'password',
+  populateFields: 'interplanetaryAddress'
+})
+
+const InterplanetaryAddress = Schema({
+  user: { type: Schema.Types.ObjectId, ref: 'User' },
   cluster: {
     type: String,
     enum: clusters
@@ -30,12 +46,9 @@ InterplanetaryAddress.virtual('fqdn').get(function () {
   return `${this.cluster}.${this.domain}`
 })
 
-InterplanetaryAddress.virtual('interplanetary_address').get(function () {
-  return `ipfs://${this.fqdn}`
-})
-
 module.exports = (connection) => {
   const schema = {
+    User: connection.model('User', User),
     InterplanetaryAddress: connection.model('InterplanetaryAddress', InterplanetaryAddress)
   }
 

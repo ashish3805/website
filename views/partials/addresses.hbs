@@ -1,0 +1,7 @@
+<h4>One address. Many possibilities.</h4>
+<ul>
+  {{# each protocols }}
+    <li><code>{{ this }}://{{ ../address }}</code></li>
+  {{/ each }}
+  <li>And many more...</li>
+</ul>

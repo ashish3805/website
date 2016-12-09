@@ -9,7 +9,7 @@ a {
 .navbar {
 	font-weight: 600;
 	margin-bottom: 0;
-	border-bottom-width: @border-bottom-width;
+	border-bottom-width: 0;
 
 	a {
 		border: 0;
@@ -27,7 +27,7 @@ a {
 }
 
 body {
-	margin-top: @navbar-height;
+	margin-top: @navbar-height / 3;
 }
 
 .section {
@@ -35,7 +35,7 @@ body {
 	padding-bottom: @section-padding;
 
 	h1:first-child {
-		margin-bottom: 60px;
+		margin-bottom: 40px;
 	}
 }
 
@@ -65,7 +65,6 @@ body {
 
 .pre-register-button {
 	border-bottom-width: @border-bottom-width;
-	margin-top: 20px;
 }
 
 .social-links {
@@ -95,6 +94,16 @@ body {
 	h1 {
 		margin-bottom: 16px;
 	}
+
+  form {
+    select {
+      width: 40%;
+    }
+
+    input[type="text"] {
+      width: 60%;
+    }
+  }
 }
 
 #team, #community {

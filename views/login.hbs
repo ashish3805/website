@@ -1,0 +1,33 @@
+{{# extend 'pre-content' }}
+{{# if error }}
+<div class="alert alert-error" role="alert">
+  <div class="container">
+    {{ error }}
+  </div>
+</div>
+{{/ if }}
+{{/ extend }}
+
+<div class="row">
+  <div class="col-lg-4 col-lg-offset-4">
+    <div class="page-header">
+      <h1>Login</h1>
+    </div>
+    <form method="post" action="/account/login">
+      <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Email" name="email" required focus>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="login">Login</button>
+    </form>
+  </div>
+</div>
+
+{{# extend 'js' }}
+<script>mixpanel.track_links('#login', 'Login')</script>
+{{/ extend }}
