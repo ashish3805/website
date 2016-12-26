@@ -1,6 +1,6 @@
 {{# extend 'pre-content' }}
 {{# if error }}
-<div class="alert alert-error" role="alert">
+<div class="alert alert-danger" role="alert">
   <div class="container">
     {{ error }}
   </div>
@@ -13,7 +13,7 @@
     <div class="page-header">
       <h1>Login</h1>
     </div>
-    <form method="post" action="/account/login">
+    <form method="post" action="/account/login" id="login_form">
       <input type="hidden" name="_csrf" value="{{ csrfToken }}">
       <div class="form-group">
         <label for="email">Email</label>
@@ -23,11 +23,11 @@
         <label for="password">Password</label>
         <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
       </div>
-      <button type="submit" class="btn btn-primary btn-block" id="login">Login</button>
+      <button type="submit" class="btn btn-primary btn-block">Login</button>
     </form>
   </div>
 </div>
 
 {{# extend 'js' }}
-<script>mixpanel.track_links('#login', 'Login')</script>
+<script>mixpanel.track_forms('#login_form', 'Login')</script>
 {{/ extend }}

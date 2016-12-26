@@ -11,7 +11,7 @@ const MongoStore = require('connect-mongo')(session)
 const compression = require('compression')
 const flash = require('connect-flash')
 
-const route = require('./newroute')
+const route = require('./route')
 const dbSchema = require('./schema/db')
 const blocks = {}
 const app = express()

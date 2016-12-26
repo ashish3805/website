@@ -21,7 +21,14 @@ const User = Schema({
 User.plugin(passportLocalMongoose, {
   usernameField: 'email',
   passwordField: 'password',
-  populateFields: 'interplanetaryAddress'
+  populateFields: 'interplanetaryAddress',
+  errorMessages: {
+    TooManyAttemptsError: 'Account is locked due to too many failed login attempts',
+    IncorrectPasswordError: 'Email or password are incorrect',
+    IncorrectUsernameError: 'Email or password are incorrect',
+    MissingUsernameError: 'No email was given',
+    UserExistsError: 'A user with the given email is already registered'
+  }
 })
 
 const InterplanetaryAddress = Schema({

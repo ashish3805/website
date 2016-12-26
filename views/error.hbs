@@ -1,0 +1,14 @@
+<div class="page-header text-center">
+  <h1 class="text-danger">Something went wrong :/</h1>
+</div>
+
+<div class="text-center">
+  <h4>
+    {{# if error.message }}
+      {{ error.message }}
+    {{ else }}
+      <p>The error has been logged. Our engineering team will fix it soon.</p>
+    {{/ if }}
+  </h4>
+  <p><small>Click here to head back to <a href="/">home</a>.</small></p>
+</div>
